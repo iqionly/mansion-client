@@ -16,28 +16,23 @@ class AuthController {
         $response = Http::withOptions([
             'verify' => false
         ])->withHeaders([
-                'Accept' => 'application/json',
-                'Authorization' => 'Bearer ' . $access_token
-            ])->get(config('mansion.url'). '/api/user');
+            'Accept' => 'application/json',
+            'Authorization' => 'Bearer ' . $access_token
+        ])->get(config('mansion.url'). '/api/user');
 
         $users = $response->json();
 
         try {
             $email = $users['email'];
         } catch (\Throwable $th) {
-            return back()->withErrors('Failed to get login information! Try again later.');
+            return redirect('/')->withErrors('Failed to get login information! Try again later.');
         }
 
-        $user = User::where('nik', $users['name'])->first();
-
-        // $user = User::firstOrNew(['email' => $email], [
-        //     'name' => $users['name'],
-        //     'email_verified_at' => $users['email_verified_at'],
-        //     'password' => bcrypt('prestasi2022')
-        // ]);
+        $call = config('auth.providers.users.model');
+        $user = $call::where(config('mansion.username_column'), $users['name'])->first();
 
         if (!$user) {
-            return back()->withErrors('Your account could not found in KaryaPres');
+            return redirect('/')->withErrors('Your account could not found in KaryaPres');
         }
 
         Auth::login($user);

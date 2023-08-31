@@ -3,7 +3,6 @@
 namespace Iqionly\MansionClient\Controllers;
 
 use Illuminate\Support\Facades\Http;
-use Iqionly\MansionClient\Storage\SessionHandle;
 use Illuminate\Http\Request;
 
 class CallbackController {
