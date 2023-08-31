@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Iqionly\\MansionClient\\MansionClientServiceProvider"
+                "Iqionly\\MansionClient\\MansionServiceProvider"
             ]
         }
     },
