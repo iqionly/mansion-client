@@ -2,12 +2,13 @@
     "name": "iqionly/mansion-client",
     "description": "Package to handle SSO",
     "type": "library",
+    "version": "1.0",
     "require": {
         "php": "^7.2|^8.0|^8.1",
         "laravel/framework": "^7.0|^7.2.5|^8.0",
         "guzzlehttp/guzzle": "^7.8"
     },
-    "license": "MIT License",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Iqionly\\MansionClient\\": "src/"
