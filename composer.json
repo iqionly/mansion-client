@@ -1,0 +1,33 @@
+{
+    "name": "iqionly/mansion-client",
+    "description": "Package to handle SSO",
+    "type": "library",
+    "require": {
+        "php": "^7.2|^8.0|^8.1",
+        "laravel/framework": "^7.0|^7.2.5|^8.0",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "license": "MIT License",
+    "autoload": {
+        "psr-4": {
+            "Iqionly\\MansionClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Iqionly",
+            "email": "izzy25.mr@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Iqionly\\MansionClient\\MansionClientServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0"
+    }
+}
