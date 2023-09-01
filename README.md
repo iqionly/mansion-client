@@ -41,5 +41,10 @@ MANSION_PASSWORD="(YOUR PASSWORD FOR USERS)"
 
 This package require, middleware `web`. So if you change it, please configure the middleware in mansion config also.
 
+You can change the config mansion by execute this command:
+```
+php artisan vendor:publish --tag=mansion-config
+```
+
 ## Contacts
 Any help, contacts me to: izzy25.mr@gmail.com or mochammadrizkyashyari@gmail.com
