@@ -25,19 +25,19 @@ class AuthController {
         try {
             $email = $users['email'];
         } catch (\Throwable $th) {
-            return redirect('/')->withErrors('Failed to get login information! Try again later.');
+            return redirect(config('mansion.login_url'))->withErrors('Failed to get login information! Try again later.');
         }
 
         $call = config('auth.providers.users.model');
         $user = $call::where(config('mansion.username_column'), $users['name'])->first();
 
         if (!$user) {
-            return redirect('/')->withErrors('Your account could not found in KaryaPres');
+            return redirect(config('mansion.login_url'))->withErrors('Your account could not found in KaryaPres');
         }
 
         Auth::login($user);
 
-        return redirect()->intended('/');
+        return redirect()->intended(config('mansion.login_url'));
     }
 
 }
