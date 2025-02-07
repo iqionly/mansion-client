@@ -1,3 +1,6 @@
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/iqionly/mansion-client.svg?style=flat-square)](https://packagist.org/packages/iqionly/mansion-client)
+[![Total Downloads](https://img.shields.io/packagist/dt/iqionly/mansion-client.svg?style=flat-square)](https://packagist.org/packages/iqionly/mansion-client)
+
 # Mansion Client
 Package to handle sso simple login Mansion Website for Laravel Application.
 
@@ -31,6 +34,9 @@ After that, copy your client id and secret key from your Mansion Server > Manage
 MANSION_URL=http://mansion.example  # your mansion url
 MANSION_CLIENT_ID=12345xxxxxxxx
 MANSION_CLIENT_SECRET=abcdefxxx
+
+# Skip if your server have loopback ip 
+MANSION_URL_LOCAL=http://mansion.local  # add other url, if mansion server is same ip with your app client.
 ```
 If you using other `Users` table with different column name and key, please tell `mansion-client` how to consume it, with just adding another environment variables:
 ```

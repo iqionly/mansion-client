@@ -11,6 +11,10 @@ class MansionServiceProvider extends ServiceProvider {
             __DIR__.'/config/mansion.php' => config_path('mansion.php'),
         ], 'mansion-config');
 
+        $this->publishes([
+            __DIR__.'/Controllers' => app_path('Http/Controllers/Mansion')
+        ], 'mansion-controllers');
+
         $this->mergeConfigFrom(
             __DIR__.'/config/mansion.php', 'mansion'
         );

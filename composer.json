@@ -24,6 +24,9 @@
         "laravel": {
             "providers": [
                 "Iqionly\\MansionClient\\MansionServiceProvider"
+            ],
+            "dont-discover": [
+                "*"
             ]
         }
     },

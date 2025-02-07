@@ -16,7 +16,7 @@ class CallbackController {
 
         $response = Http::withOptions([
             'verify' => false
-        ])->asForm()->post(config('mansion.url') . '/oauth/token', [
+        ])->asForm()->post(config('mansion.url_local') . '/oauth/token', [
                 'grant_type' => 'authorization_code',
                 'client_id' => config('mansion.client_id'),
                 'client_secret' => config('mansion.client_secret'),
